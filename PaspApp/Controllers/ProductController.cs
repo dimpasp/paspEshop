@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PaspCore.Services;
+using PaspCore.Model;
 
 namespace PaspCore.Controllers
 {
@@ -14,13 +15,13 @@ namespace PaspCore.Controllers
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
         }
-        //public IActionResult List()
-        //{
-        //    var ProductListViewModel = new ProductListViewModel();
-        //    ProductListViewModel.Products = _productRepository.GetAllProduct;
-        //    ProductListViewModel.CurrentCategory = "aaa";
-        //    return View(ProductListViewModel);
-        //}
+        public IActionResult List()
+        {
+            var ProductListViewModel = new ProductListViewModel();
+            ProductListViewModel.Products = _productRepository.GetAllProduct;
+            ProductListViewModel.CurrentCategory = "paper";
+            return View(ProductListViewModel);
+        }
 
     }
 }

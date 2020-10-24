@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PaspCore.Services
 {
-    public class ICategoryRepository
+    public interface ICategoryRepository
     {
     }
 }

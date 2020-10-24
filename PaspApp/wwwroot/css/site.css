@@ -57,6 +57,17 @@ html {
   position: relative;
   min-height: 100%;
 }
+#logreg-forms button[type="submit"] {
+    margin-top: 10px;
+}
+
+#logreg-forms .facebook-btn {
+    background-color: #3C589C;
+}
+
+#logreg-forms .google-btn {
+    background-color: #DF4B3B;
+}
 
 body {
   /* Margin bottom by footer height */

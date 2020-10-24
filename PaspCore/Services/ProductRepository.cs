@@ -1,4 +1,5 @@
 ﻿using PaspCore.Data;
+using PaspCore.Model;
 using PaspCore.Services;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace PaspCore.Model
+namespace PaspCore.Services
 {
     public class ProductRepository : IProductRepository
     {
@@ -25,9 +26,19 @@ namespace PaspCore.Model
             }
         }
 
+        public bool AddProduct(AddProductOptions options)
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetProductById(int ProductId)
         {
             return _appDbContext.Products.FirstOrDefault(c => c.ProductId == ProductId);
+        }
+
+        public bool UpdateProduct(string productId, UpdateProductOptions options)
+        {
+            throw new NotImplementedException();
         }
     }
 }

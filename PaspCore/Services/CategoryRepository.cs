@@ -1,10 +1,11 @@
 ﻿using PaspCore.Data;
+using PaspCore.Model;
 using PaspCore.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaspCore.Model
+namespace PaspCore.Services
 {
     public class CategoryRepository : ICategoryRepository
     {

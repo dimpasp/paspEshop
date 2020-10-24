@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PaspCore.Model.Product>
+<h1>
+
+
+</h1>
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Is Available</th>
+            <th>Details</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @product.Name
+                </td>
+                <td>
+                    @product.Description
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    @product.Category
+                </td>
+                <td>
+                    @Html.ActionLink("See", "Details", new { id = product.ProductId})
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
