@@ -12,5 +12,9 @@ namespace PaspApp.Controllers
         {
             return View();
         }
+        public IActionResult Order()
+        {
+            return View();
+        }
     }
 }

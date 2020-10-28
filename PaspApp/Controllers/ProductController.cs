@@ -22,6 +22,18 @@ namespace PaspCore.Controllers
             ProductListViewModel.CurrentCategory = "paper";
             return View(ProductListViewModel);
         }
+        public IActionResult Search()
+        {
+            return View();
+        }
+        public IActionResult Similar()
+        {
+            return View();
+        }
+        public IActionResult Hot()
+        {
+            return View();
+        }
 
     }
 }

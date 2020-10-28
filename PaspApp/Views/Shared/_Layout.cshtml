@@ -34,10 +34,21 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <footer class="site-footer-bottom">
         <div class="container">
-            &copy; 2020 - PaspApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="copyrights-col-left col-md-6 col-sm-6">
+                    <p>&copy; @DateTime.Now.Year PaspApp.</p>
+                </div>            
+                    <div class="copyrights-col-right col-md-6 col-sm-6">
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
+                            <a href="http://facebook.com" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                            <a href="http://twitter.com" aria-label="Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>             
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
