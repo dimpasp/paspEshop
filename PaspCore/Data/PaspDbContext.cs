@@ -13,7 +13,8 @@ namespace PaspCore.Data
         public DbSet<Category> Categories { get; set; }
         public PaspDbContext() : base()
         {
-            connectionString_ = "DefaultConnection";
+            connectionString_ = "Server=192.168.1.2;Database=PaspalasDb;User=paspjr;Password=12345!@#";
+
         }
         public PaspDbContext(string connString)
         {
@@ -31,6 +32,10 @@ namespace PaspCore.Data
             {
                 CategoryId = 1
             });
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(connectionString_);
         }
     }
 }
