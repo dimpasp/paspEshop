@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class AddProductOptions
+    public class AddProduct
     {
         public string Id { get; set; }
 

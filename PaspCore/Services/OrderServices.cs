@@ -31,7 +31,7 @@ namespace PaspCore.Services
                 return null;
             }
             var customer = customers_.SearchCustomers(
-              new SearchCustomerOptions()
+              new SearchCustomer()
               {
                   CustomerId = customerId
               })

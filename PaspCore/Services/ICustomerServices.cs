@@ -9,13 +9,13 @@ namespace PaspCore.Services
    public interface ICustomerServices
     {
         Customer CreateCustomer(
-            CreateCustomerOptions options);
+            CreateCustomer options);
 
         IQueryable<Customer> SearchCustomers(
-            SearchCustomerOptions options);
+            SearchCustomer options);
 
         bool UpdateCustomer(int id,
-            UpdateCustomerOptions options);
+            UpdateCustomer options);
 
     }
 }

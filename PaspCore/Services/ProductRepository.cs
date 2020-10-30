@@ -26,7 +26,7 @@ namespace PaspCore.Services
             }
         }
 
-        public bool AddProduct(AddProductOptions options)
+        public bool AddProduct(AddProduct options)
         {
             throw new NotImplementedException();
         }
@@ -36,7 +36,7 @@ namespace PaspCore.Services
             return _appDbContext.Products.FirstOrDefault(c => c.ProductId == ProductId);
         }
 
-        public bool UpdateProduct(string productId, UpdateProductOptions options)
+        public bool UpdateProduct(string productId, UpdateProduct options)
         {
             throw new NotImplementedException();
         }

@@ -8,9 +8,9 @@ namespace PaspCore.Services
     public interface IProductRepository
     {
         IEnumerable<Product> GetAllProduct { get; }
-        bool AddProduct(AddProductOptions options);
+        bool AddProduct(AddProduct options);
         bool UpdateProduct(string productId,
-            UpdateProductOptions options);
+            UpdateProduct options);
         Product GetProductById(int ProductId);
     }
 }

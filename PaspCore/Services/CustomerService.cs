@@ -10,17 +10,17 @@ namespace PaspCore.Services
     public class CustomerService : ICustomerServices
     {
         private readonly PaspDbContext _appDbContext;
-        public Customer CreateCustomer(CreateCustomerOptions options)
+        public Customer CreateCustomer(CreateCustomer options)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Customer> SearchCustomers(SearchCustomerOptions options)
+        public IQueryable<Customer> SearchCustomers(SearchCustomer options)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateCustomer(int id, UpdateCustomerOptions options)
+        public bool UpdateCustomer(int id, UpdateCustomer options)
         {
             throw new NotImplementedException();
         }

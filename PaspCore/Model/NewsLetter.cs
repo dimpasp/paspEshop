@@ -4,23 +4,26 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class Category
+    public class NewsLetter
     {
+        public  int Id { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int CategoryId { get; set; }
+        public  string FullName { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string CategoryName { get; set; }
+        public  string Email { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string CategoryDescription { get; set; }
+        public  DateTime DateCreated { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public List<Product> Products { get; set; }
+        public  bool Disabled { get; set; }
+      
+
     }
 }

@@ -6,9 +6,21 @@ namespace PaspCore.Model
 {
     public class Order
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int Id { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public Customer Customer { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string DeliveryAddress { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public ICollection<OrderProduct> Products { get; set; }
 
         public Order()

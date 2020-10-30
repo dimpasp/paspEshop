@@ -4,23 +4,21 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class Category
+    public class UpdateProduct
     {
         /// <summary>
         /// 
         /// </summary>
-        public int CategoryId { get; set; }
+        public decimal? Price { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
-        public string CategoryName { get; set; }
+        public decimal? Discount { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
-        public string CategoryDescription { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public List<Product> Products { get; set; }
+        public string Description { get; set; }
     }
 }

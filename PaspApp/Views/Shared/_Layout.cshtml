@@ -1,24 +1,29 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+     @*SKAEI  EDW*@
+
+
+@*@inject SignInManager<IdentityUser> SignInManager;*@
+
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"] </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body style="background-color:cadetblue">
+<body style="background-color:darkgray">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container" style="background-color:burlywood">
+            <div class="container">
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item" style="position:absolute;left:1700px;top:20px">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Register">Login in</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Search">Search</a>
                         </li>
@@ -26,6 +31,30 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
                         </li>
                     </ul>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav ml-auto">
+                            @*@if (SignInManager.IsSignedIn(User))
+                            {
+                                <li class="nav-item" style="position:absolute;left:1700px;top:20px">
+                                    <form method="post" asp-controller="Account" asp-action="Logout">
+                                        <button type="submit" style="width:auto"
+                                                class="nav-link btn btn-link py-0">
+                                            Logout @User.Identity.Name
+                                        </button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {}*@
+                                <li class="nav-item" style="position:absolute;left:1700px;top:20px">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                </li>
+                                <li class="nav-item" style="position:absolute;left:1650px;top:20px">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                </li>
+                           
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -35,27 +64,27 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="site-footer-bottom" style="background-color:gray">
-        <div class="container">
-            <div class="row">
-                <div class="copyrights-col-left col-md-6 col-sm-6">
-                    <p>&copy; @DateTime.Now.Year PaspApp.</p>
-                </div>
-                <div class="copyrights-col-right col-md-6 col-sm-6">
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
-                        <a href="http://facebook.com" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
-                        <a href="http://twitter.com" aria-label="Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a>
-                    </div>
+</body>
+</html>
+<footer class="site-footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="copyrights-col-left col-md-6 col-sm-6">
+                <p>&copy; @DateTime.Now.Year PaspApp.</p>
+            </div>
+            <div class="copyrights-col-right col-md-6 col-sm-6">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
+                    <a href="http://facebook.com" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com" aria-label="Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@RenderSection("Scripts", required: false)
 
-</body>
-</html>

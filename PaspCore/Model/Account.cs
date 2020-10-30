@@ -4,15 +4,15 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class ProductListViewModel
+    public class Account
     {
         /// <summary>
         /// 
         /// </summary>
-        public IEnumerable<Product> Products { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string CurrentCategory { get; set; }
+        public string Password { get; set; }
     }
 }

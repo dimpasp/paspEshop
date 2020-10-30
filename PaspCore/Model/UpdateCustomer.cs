@@ -4,21 +4,23 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class UpdateProductOptions
+    public class UpdateCustomer
     {
         /// <summary>
         /// 
         /// </summary>
-        public decimal? Price { get; set; }
-
+        public string Firstname { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public decimal? Discount { get; set; }
-
+        public string Lastname { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string Description { get; set; }
+        public bool? Active { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool? Phone { get; set; }
     }
 }

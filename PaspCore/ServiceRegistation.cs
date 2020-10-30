@@ -30,6 +30,12 @@ namespace PaspCore
                 .RegisterType<OrderServices>()
                 .InstancePerLifetimeScope()
                 .As<IOrderServices>();
+
+            builder
+                .RegisterType<NewsLetterServices>()
+                .InstancePerLifetimeScope()
+                .As<INewsLetterServices>();
+
             builder.
                RegisterType<Data.PaspDbContext>()
                .InstancePerLifetimeScope()
