@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PaspCore.Model;
-using System.Data;
 
 namespace PaspCore.Data
 {
 
-    public class PaspDbContext : DbContext
+    public class PaspDbContext : IdentityDbContext
     {
         private readonly string connectionString_;
 
@@ -25,15 +25,10 @@ namespace PaspCore.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Product>().HasData(new Product
-            {
-                ProductId = 1,
-                Price = 123
-            });
-            modelBuilder.Entity<Category>().HasData(new Category
-            {
-                CategoryId = 1
-            });
+            modelBuilder.Entity<Product>().HasData(new Product{ });
+            modelBuilder.Entity<Category>().HasData(new Category{ });
+            modelBuilder.Entity<Account>(e =>
+                e.HasNoKey());
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

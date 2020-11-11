@@ -21,6 +21,8 @@ namespace PaspCore.Model
         /// <summary>
         /// 
         /// </summary>
+        
+        /// here put a key
         public ICollection<OrderProduct> Products { get; set; }
 
         public Order()

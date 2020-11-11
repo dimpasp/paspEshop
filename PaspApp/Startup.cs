@@ -32,6 +32,8 @@ namespace PaspApp
             services.AddDbContext<PaspDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<PaspDbContext>();
 
 
             //services.AddIdentity<IdentityUser, IdentityRole>(options =>
