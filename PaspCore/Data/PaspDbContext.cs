@@ -13,6 +13,7 @@ namespace PaspCore.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public PaspDbContext() : base()
         {
             connectionString_ = "Server=localhost;Database=PaspalasDb;User=paspjr;Password=ADHE1!@23#";

@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PaspCore.Services;
 using PaspCore.Model;
+using PaspCore.Data;
 
 namespace PaspCore.Controllers
 {
 
     public class ProductController : Controller
     {
+        private PaspDbContext _context;
         private readonly IProductRepository _productRepository;
         private readonly ICategoryRepository _categoryRepository;
 

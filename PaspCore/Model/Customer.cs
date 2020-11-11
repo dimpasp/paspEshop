@@ -22,6 +22,10 @@ namespace PaspCore.Model
         /// 
         /// </summary>
         public bool IsActive { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool WholesaleCustomer { get; set; }
 
         /// <summary>
         /// 
@@ -32,6 +36,10 @@ namespace PaspCore.Model
         /// 
         /// </summary>
         public string VatNumber { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Password { get; set; }
 
         /// <summary>/
         /// 
