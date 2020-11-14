@@ -2,6 +2,7 @@
 using PaspCore.Services;
 using PaspCore.Model;
 using PaspCore.Data;
+using System.Linq;
 
 namespace PaspCore.Controllers
 {
@@ -24,13 +25,55 @@ namespace PaspCore.Controllers
             ProductListViewModel.CurrentCategory = "paper";
             return View(ProductListViewModel);
         }
-        public IActionResult Search()
+
+        public IQueryable<Product> SearchProduct(SearchProduct options)
         {
-            return View();
+            var product_ = _context
+                .Set<Product>()               
+                .AsQueryable();
+
+            if (options == null)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrWhiteSpace(options.Name))
+            {
+                product_ = product_.Where(p =>
+                    p.Name.Contains(options.Name));
+            }
+
+            if (options.ProductId > 0)
+            {
+                product_ = product_.Where(p =>
+                    p.ProductId == options.ProductId);
+            }
+            return product_;
         }
-        public IActionResult Similar()
+        public IQueryable<Product> SimilarProduct(SimilarProduct options)
         {
-            return View();
+            var product_ = _context
+                .Set<Product>()
+                .AsQueryable();
+
+            if (options == null)
+            {
+                return null;
+            }
+            var ProductList =_productRepository.GetAllProduct;            
+            foreach (Product product in ProductList)
+            {
+                if (options.Category == product.Category)
+                {
+                    product_ = product_.Where(p =>
+                   p.Name.Contains(options.Name));
+
+                    product_ = product_.Where(p =>
+                   p.ImageThubnail.Contains(options.ImageThubnail));
+                }
+            }
+
+            return product_;
         }
         public IActionResult Hot()
         {

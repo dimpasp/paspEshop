@@ -13,15 +13,11 @@ namespace PaspCore.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }       
         public PaspDbContext() : base()
         {
             connectionString_ = "Server=localhost;Database=PaspalasDb;User=paspjr;Password=ADHE1!@23#";
 
-        }
-        public PaspDbContext(string connString)
-        {
-            connectionString_ = connString;
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,6 +26,7 @@ namespace PaspCore.Data
             modelBuilder.Entity<Category>().HasData(new Category{ });
             modelBuilder.Entity<Account>(e =>
                 e.HasNoKey());
+            modelBuilder.Entity<Order>().OwnsOne(x=>x.Products);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

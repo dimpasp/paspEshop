@@ -4,30 +4,24 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class Order
+    public class SearchProduct
     {
         /// <summary>
         /// 
         /// </summary>
-        public int Id { get; set; }
+        public int ProductId { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public Customer Customer { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string DeliveryAddress { get; set; }
+        public string Email { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        
-        /// here put a key
-        public List<OrderProduct> Products { get; set; }
+        public int Value { get; set; }
 
-        public Order()
-        {
-            Products = new List<OrderProduct>();
-        }
     }
 }

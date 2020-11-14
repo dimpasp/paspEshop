@@ -4,35 +4,35 @@ using System.Text;
 
 namespace PaspCore.Model
 {
-    public class SearchCustomer
+    public class SimilarProduct
     {
         /// <summary>
         /// 
         /// </summary>
-        public string FirstName { get; set; }
+        public int ProductId { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string LastName { get; set; }
+        public decimal Price { get; set; }
+        /// <summary>
+        /// /
+        /// </summary>
+        public string Description { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string VatNumber { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string Email { get; set; }
+        public decimal Discount { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public DateTimeOffset CreatedFrom { get; set; }
+        public string ImageThubnail { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public DateTimeOffset CreatedTo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? CustomerId { get; set; }
+        public Category Category { get; set; }
     }
 }

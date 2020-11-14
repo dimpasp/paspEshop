@@ -75,5 +75,36 @@ namespace PaspApp.Controllers
         {
             return View();
         }
+
+        //This must be hidden.Accessable only for owner of project 
+        public IQueryable<Customer> SearchCustomer(SearchCustomer options)
+        {
+            var _customer = _context
+                .Set<Customer>()
+                .AsQueryable();
+
+            if (options == null)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrWhiteSpace(options.FirstName))
+            {
+                _customer = _customer.Where(p =>
+                    p.Firstname.Contains(options.FirstName));
+            }
+
+            if (!string.IsNullOrWhiteSpace(options.LastName))
+            {
+                _customer = _customer.Where(p =>
+                    p.Lastname == options.LastName);
+            }
+            if (options.CustomerId > 0)
+            {
+                _customer = _customer.Where(p =>
+                    p.Id == options.CustomerId);
+            }
+            return _customer;
+        }
     }
 }
