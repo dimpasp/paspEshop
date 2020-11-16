@@ -16,6 +16,20 @@ namespace PaspCore.Services
             _appDbContext = appDbContext;
         }
         public IEnumerable<Category> GetAllCategories => _appDbContext.Categories;
-
+        //public IEnumerable<Category> GetAllCategories => new List<Category>
+        //{
+        //    new Category
+        //    {
+        //        CategoryId=1,
+        //        CategoryName="Paper",
+        //        CategoryDescription="paper for use"
+        //    },
+        //     new Category
+        //    {
+        //        CategoryId=2,
+        //        CategoryName="Bottle",
+        //        CategoryDescription="Bottle for use"
+        //    }
+        //};
     }
 }

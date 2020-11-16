@@ -15,12 +15,11 @@ namespace PaspApp.Controllers
 
         private readonly UserManager<IdentityUser> userManager;
 
-        public AccountController(SignInManager<IdentityUser> signInManager)
+        public AccountController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {           
             this.signInManager = signInManager;
+            this.userManager = userManager;
         }
-
-
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
@@ -53,6 +52,24 @@ namespace PaspApp.Controllers
 
             return View(model);
         }
+        //public async Task<ActionResult> Confirm(string userId, string code)
+        //{
+        //    if (userId == null || code == null)
+        //    {
+        //        return View("Error");
+        //    }
+        //    var result = await userManager.ConfirmEmailAsync(userId, code);
+        //    return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        //}
+
+        public ActionResult ForgotPasswordConfirm()
+        {
+            return View();
+        }
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
 
         [HttpGet]
         public IActionResult Register()
@@ -73,20 +90,13 @@ namespace PaspApp.Controllers
                     Email = model.Email
                 };
 
-                // Store user data in  Dbtable
                 var result = await userManager.CreateAsync(user, model.Password);
 
-                // If user is successfully created, sign-in the user using
-                // SignInManager and redirect to index action of HomeController
-                // Whwn contact completed,send user there
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }
-
-                // If there are any errors, add them to the ModelState object
-                // which will be displayed by the validation summary tag helper
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
