@@ -18,28 +18,40 @@ namespace PaspCore.Model
     }
     public class ForgotPassword
     {
+        /// <summary>
+        /// 
+        /// </summary>
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-    public class ResetPasswor
+    public class ResetPassword
     {
+        /// <summary>
+        /// 
+        /// </summary>
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         [Required]       
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
-        public string Code { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Token { get; set; }
     }
 }

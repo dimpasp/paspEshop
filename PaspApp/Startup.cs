@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Providers.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,19 +33,18 @@ namespace PaspApp
             services.AddDbContext<PaspDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<PaspDbContext>();
 
+            services.AddIdentity<IdentityUser, IdentityRole>(opt =>
+            {
+                opt.Password.RequiredLength = 7;
+                opt.Password.RequireUppercase = true;
+                opt.User.RequireUniqueEmail = true;
+            })
+                .AddEntityFrameworkStores<PaspDbContext>()
+                .AddDefaultTokenProviders(); ;
 
-            //services.AddIdentity<IdentityUser, IdentityRole>(options =>
-            //{
-            //    options.Password.RequiredLength = 8;
-            //    options.Password.RequireLowercase = false;
-            //}).AddEntityFrameworkStores<PaspDbContext>();
-  
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
