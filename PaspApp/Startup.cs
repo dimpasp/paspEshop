@@ -41,8 +41,13 @@ namespace PaspApp
                 opt.User.RequireUniqueEmail = true;
             })
                 .AddEntityFrameworkStores<PaspDbContext>()
-                .AddDefaultTokenProviders(); ;
+                .AddDefaultTokenProviders(); 
 
+            var emailConfig = Configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+
+            services.AddSingleton(emailConfig);
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
         }
