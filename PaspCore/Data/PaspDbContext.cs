@@ -22,8 +22,9 @@ namespace PaspCore.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Product>().HasData(new Product{ });
-            modelBuilder.Entity<Category>().HasData(new Category{ });
+            modelBuilder.Entity<Product>().Property(m => m.ProductId).IsRequired();
+            modelBuilder.Entity<Category>().Property(m => m.CategoryId).IsRequired();
+            //hasdata to ckeck out
             modelBuilder.Entity<Account>(e =>
                 e.HasNoKey());
             modelBuilder.Entity<Order>().OwnsOne(x=>x.Products);

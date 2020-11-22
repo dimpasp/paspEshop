@@ -54,7 +54,7 @@ namespace PaspCore.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "ProductId", "CategoryId", "Description", "Discount", "HotObject", "ImageThubnail", "Imageurl", "Name", "Price" },
-                values: new object[] { 1, 0, null, 0m, false, null, null, null, 123m });
+                values: new object[] { 1, 1, null, 0m, false, null, null, null, 123m });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",

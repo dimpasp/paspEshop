@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,18 @@ namespace PaspApp.Controllers
     public class CustomerController : Controller
     {
         private PaspDbContext _context;
+        /// <summary>
+        /// 
+        /// </summary>
         public CustomerController()
         {
             _context = new PaspDbContext();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -29,7 +38,19 @@ namespace PaspApp.Controllers
 
             return View("CustomerForm", viewModel);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult SendMail()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
@@ -61,21 +82,41 @@ namespace PaspApp.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private ActionResult HttpNotFound()
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
         public IActionResult Add()
         {
             return View();
         }
-        public IActionResult Order()
+        // <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Details(int id)
         {
-            return View();
-        }
+            var customer = _context.Customers.Include(c => c.Id);
+            if (customer == null)
+                return HttpNotFound();
 
+            return View(customer);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="options"></param>
+        /// <returns></returns>
         //This must be hidden.Accessable only for owner of project 
         public IQueryable<Customer> SearchCustomer(SearchCustomer options)
         {

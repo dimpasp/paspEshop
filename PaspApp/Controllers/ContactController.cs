@@ -12,6 +12,10 @@ namespace PaspCore.Controllers
         {
             return View();
         }
+        public IActionResult newsLetter()
+        {
+            return View();
+        }
         public JsonResult RealtyNewsLetterSave(string fullName, string email, string regions)
         {
             if (string.IsNullOrEmpty(email)) return Json("Error");

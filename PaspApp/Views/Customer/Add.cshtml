@@ -23,7 +23,7 @@
     <div class="form-group row">
         <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
         <div class="col-sm-10">
-            <input type="number" class="form-control" id="Phone" placeholder="Phone Number"min="10" max="10">
+            <input type="number" class="form-control" id="Phone" placeholder="Phone Number" min="10" max="10">
         </div>
     </div>
     <div class="form-group row">
@@ -50,4 +50,36 @@
         </div>
     </div>
 </form>
+<button id="buttonSubmit" class="btn btn-primary">Submit</button>
+
+@{
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#buttonSubmit").click(function () {
+                    $.ajax({
+                        url: "https://localhost:44332/Customer/add?FirstName=" + $("#FirstName").val() +
+                            "&LastName=" + $("#LastName").val() +
+                            "&email=" + $("#email").val() +
+                            "&Phone=" + $("#Phone").val() +
+                            "&Email=" + $("#Email").val() +
+                            "&Password=" + $("#Password").val() +
+                            "&WholesaleCustomer=" + $("#WholesaleCustomer").val(),
+                        method: "get",
+                        contentType: "application/json; charset=utf-8",
+                    })
+                        .done(function (response) {
+                            if (response == true)
+                                alert("Success!")
+                            else
+                                alert("Fail! Something unexpected happened.")
+                        })
+                        .fail(function () {
+                            alert("Fail! Something unexpected happened.");
+                        });
+                });
+            });
+        </script>
+    }
 

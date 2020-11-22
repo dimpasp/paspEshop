@@ -40,18 +40,21 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                     </li>
-                    <div class="dropdown">
+                    <li class="dropdown">
                         <button class="btn" type="button" data-toggle="dropdown">Contact</button>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Where we are</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Add">Send Mail</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="SendMail">Send Mail</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="newsLetter">Subscribe</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="dropdown">
+                    </li>
+                    <li class="dropdown">
                         <button class="btn" type="button" data-toggle="dropdown">Products</button>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
@@ -64,7 +67,7 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Search">Category 2</a>
                             </li>
                         </ul>
-                    </div>
+                    </li>
                 </ul>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto">
