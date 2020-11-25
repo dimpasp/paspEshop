@@ -14,12 +14,16 @@
     </div>
     <div class="contact-form">
         <form action="">
-            <label>E-mail</label>
-            <input type="email" placeholder="enter your email">
+            <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="email" class="form-control" id="email" placeholder="e-mail" required>
+            </div>
             <br>
             <textarea placeholder="type a message" rows="10" style=" resize:none; padding-right: 40vw"></textarea>
             <br>
-            <button type="submit" style="background-color:black;color:gray">Submit</button>
+            <div class="text-right">
+                <button name="buttonEmail" type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
+            </div> 
         </form>
     </div>
 

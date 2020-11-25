@@ -1,12 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-
-     @*SKAEI  EDW*@
-
-
-@*@inject SignInManager<IdentityUser> SignInManager;*@
-
-
-<html lang="en">
+﻿<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -30,52 +22,57 @@
     </style>
 </head>
 <body style="background-color:darkgray">
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container">
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                <ul class="navbar-nav flex-grow-1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarWithLogOut"
+                aria-controls="navbarWithLogOut" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">PaspApp.com</a>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:white" asp-area="" asp-controller="Home" asp-action="Index">Home<span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        <a class="nav-link" style="color:white" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                     </li>
                     <li class="dropdown">
-                        <button class="btn" type="button" data-toggle="dropdown">Contact</button>
-                        <ul class="dropdown-menu">
+                        <button class="btn" style="color:white" type="button" data-toggle="dropdown">Contact</button>
+                        <ul class="dropdown-menu bg-dark">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Where we are</a>
+                                <a class="nav-link" style="color:white" asp-area="" asp-controller="Contact" asp-action="Index">Where we are</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="SendMail">Send Mail</a>
+                                <a class="nav-link" style="color:white" asp-area="" asp-controller="Customer" asp-action="SendMail">Send Mail</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="newsLetter">Subscribe</a>
+                                <a class="nav-link" style="color:white" asp-area="" asp-controller="Contact" asp-action="newsLetter">Subscribe</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <button class="btn" type="button" data-toggle="dropdown">Products</button>
-                        <ul class="dropdown-menu">
+                        <button class="btn" style="color:white" type="button" data-toggle="dropdown">Products</button>
+                        <ul class="dropdown-menu bg-dark">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Search">All</a>
+                                <a class="nav-link" style="color:white" asp-area="" asp-controller="Product" asp-action="Search">All</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Search">Category 1</a>
+                                <a class="nav-link" style="color:white" asp-area="" asp-controller="Product" asp-action="Search">Category 1</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Search">Category 2</a>
+                                <a class="nav-link" style="color:white" asp-area="" asp-controller="Product" asp-action="Search">Category 2</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto bg-dark">
                         <li class="nav-item" style="position:absolute;left:1700px;top:20px">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
                         </li>
                         <li class="nav-item" style="position:absolute;left:1650px;top:20px">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            <a class="nav-link" style="color:white" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
                         </li>
 
                     </ul>
@@ -88,7 +85,7 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="container-fluid text-center">
+    <footer class="site-footer-bottom">
         <div class="container">
             <div class="row">
                 <div class="copyrights-col-left col-md-6 col-sm-6">
@@ -96,10 +93,10 @@
                 </div>
                 <div class="copyrights-col-right col-md-6 col-sm-6">
                     <div class="social-icons">
-                        <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a>
-                        <a href="http://facebook.com" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
-                        <a href="http://twitter.com" aria-label="Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a>
+                        <a class="site-footer-bottom" href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener"></a>
+                        <a class="site-footer-bottom" href="http://facebook.com" aria-label="Facebook" target="_blank" rel="noopener"></a>
+                        <a class="site-footer-bottom" href="http://twitter.com" aria-label="Twitter" target="_blank" rel="noopener"></a>
+                        <a class="site-footer-bottom" href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
                     </div>
                 </div>
             </div>
