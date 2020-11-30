@@ -16,7 +16,7 @@ namespace PaspCore.Data
         public DbSet<Customer> Customers { get; set; }       
         public PaspDbContext() : base()
         {
-            connectionString_ = "Server=localhost;Database=PaspalasDb;User=paspjr;Password=ADHE1!@23#";
+            connectionString_ = "Data Source=(localdb)\\MSSQLLocalDB;Database=PaspalasDb;User=sa;Password=ADHE1!@23#";
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
